@@ -1,39 +1,35 @@
-### Want full control over everything in this template?
-We've created a new project called [**stackmix**](https://github.com/roxiness/stackmix). It's an experimental CLI that let's you pick and mix all features in a Routify template! Get started with `npx stackmix`
+# NoCodeDB
 
+NoCodeDB is an open-source, no-code framework & backend-as-a-service for Webflow, Draftbit and various other no-code app builders. You can spin up a database, add authentication with state management to your app builder, and create a fully customizable backend API in minutes. All without writing a line of code. NoCodeDB is highly scalable and completely customizable, from MVP to Fortune 500.
 
-# Routify Starter
+## Supported Builders
 
-Starter template for [Routify](https://github.com/roxiness/routify).
+#### Webflow
 
-# Get started
+Documentation can be found here.
 
-To get started run:
-```sh
-mkdir routify-app
-cd routify-app
-npx @roxi/routify init
-```
+#### Draftbit
 
+Documentation can be found here.
 
-# Scripts
+#### Coming Soon
 
-Run with `npm run <command>`, for example `npm run dev`
+Squarespace, Wix, and others!
 
-| Command   | Description                                   |
-|-----------|-----------------------------------------------|
-| `dev`     | Development (port 5000)                       |
-| `build`   | Build your app for production!                |
-| `preview` | Preview the built version of your app locally |
+## Download
 
-# Want a service worker?
-Checkout [vite-plugin-pwa](http://npmjs.org/vite-plugin-pwa)
+The easiest way to download and host NoCodeDB is to do so via one-click deployment on our website. You can also self host on heroku, any linux supported cloud platform or locally. Keep in mind, for self hosting you handle all infastructure and updates.
 
-# Extra Configs
-We include a few extra configs to help make it easy to ship a Routify project:
+### Deployment
 
-| Config Path        | Description                                                                                                                                                |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `netlify.toml`     | This is the [Netlify](https://www.netlify.com/) config, you need this when publishing to Netlify                                                           |
-| `vercel.json`      | This is the [Vercel](https://vercel.com/) config, you need this when publishing to Vercel                                                                  |
-| `public/.htaccess` | If you build your site to static using [spank](https://www.npmjs.com/package/spank) you will need this when putting your site on an apache based webserver |
+#### Website
+
+Details are coming soon.
+
+#### Heroku
+
+Details are coming soon.
+
+#### Locally
+
+Details are coming soon.
