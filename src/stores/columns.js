@@ -18,7 +18,7 @@ function createColumnJSON(name, size = 250) {
 }
 
 function createColumns() {
-	const { subscribe, set, update } = writable([createColumnJSON("User", 250)]);
+	const { subscribe, set, update } = writable([createColumnJSON("User", 250), createColumnJSON("Name", 250)]);
 
 	return {
 		subscribe,

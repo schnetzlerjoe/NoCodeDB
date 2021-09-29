@@ -3,18 +3,18 @@
   import DataTab from './../components/DataTab.svelte';
   import TypesTab from './../components/TypesTab.svelte';
 
-  export let tab = "types";
+  export let tab = "data";
 </script>
 
 <main>
   <div class="tabs is-boxed is-medium">
     <ul>
-      <li class="is-active">
+      <li>
         <a>
           <span>Types</span>
         </a>
       </li>
-      <li>
+      <li class="is-active">
         <a>
           <span>Data</span>
         </a>
