@@ -10,10 +10,10 @@
 
 <main>
   <div class="columns main-col">
-    <div class="column">
+    <div class="menu">
       <Menu currentuser={currentuser}/>
     </div>
-    <div class="column is-10 main-div">
+    <div class="main-div">
       <slot />
     </div>
   </div>
@@ -37,5 +37,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 </style>

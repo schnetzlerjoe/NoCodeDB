@@ -9,56 +9,33 @@
 
   let protectedPaths = ["/data", "api", "script", "settings"];
   let nonprotectedPaths = ["/", "/login", "signup"];
-  let currentuser;
+  let currentuser = "nsdsd";
 </script>
 
 {#if currentuser}
   <div class="div-block-6">
-    <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfdd193869173d29d421b2_NoCodeDB%20Logo%20(2).png" loading="lazy" width="200" alt="NoCodeDB Logo" class="image-6">
     <div id="logged-out-menu" class="loggedoutmenu">
         <div class="container-5 w-container">
           <a href="/data" aria-current="page" class="link-block-menu w-inline-block w--current">
               <div id="home-group" class="menu-select-group">
                 <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfa97a8a98d5136962a1c9_home-button.svg" loading="lazy" width="40" alt="" class="image-2">
-                <h1 class="heading-4">
-                    <strong>Database</strong>
-                </h1>
-              </div>
-          </a>
-          <a href="/auth" class="link-block-menu w-inline-block">
-              <div id="pricing-group" class="menu-select-group">
-                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa970bb6ad5bfa8ab278_credit-card.svg" loading="lazy" width="40" alt="" class="image-2">
-                  <h1 class="heading-4">
-                    <strong>Auth</strong>
-                  </h1>
               </div>
           </a>
           <a href="/api" class="link-block-menu w-inline-block">
               <div id="pricing-group" class="menu-select-group">
                 <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa970bb6ad5bfa8ab278_credit-card.svg" loading="lazy" width="40" alt="" class="image-2">
-                  <h1 class="heading-4">
-                    <strong>Api</strong>
-                  </h1>
               </div>
           </a>
           <a href="/script" class="link-block-menu w-inline-block">
               <div id="docs-group" class="menu-select-group">
                 <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa941e8c086acac80131_document.svg" loading="lazy" width="40" alt="" class="image-2">
-                <h1 class="heading-4">
-                  <strong>Scripts</strong></h1>
               </div>
           </a>
           <a href="/settings" class="link-block-menu w-inline-block">
               <div id="login-group" class="menu-select-group">
                 <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa90d9e96f82b3044257_user.svg" loading="lazy" width="40" alt="" class="image-2">
-                  <h1 class="heading-4">
-                    <strong>Settings</strong>
-                  </h1>
               </div>
           </a>
-        </div>
-        <div align="center">
-          <button on:click={logoutHandler} class="signup-button">Logout</button>
         </div>
     </div>
   </div>
@@ -69,7 +46,7 @@
         <div class="container-5 w-container">
           <a href="/" aria-current="page" class="link-block-menu w-inline-block w--current">
               <div id="home-group" class="menu-select-group">
-                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfa97a8a98d5136962a1c9_home-button.svg" loading="lazy" width="40" alt="" class="image-2">
+                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfa97a8a98d5136962a1c9_home-button.svg" loading="lazy" alt="" class="image-2">
                 <h1 class="heading-4">
                     <strong>Home</strong>
                 </h1>
@@ -77,7 +54,7 @@
           </a>
           <a href="/pricing" class="link-block-menu w-inline-block">
               <div id="pricing-group" class="menu-select-group">
-                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa970bb6ad5bfa8ab278_credit-card.svg" loading="lazy" width="40" alt="" class="image-2">
+                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa970bb6ad5bfa8ab278_credit-card.svg" loading="lazy" alt="" class="image-2">
                   <h1 class="heading-4">
                     <strong>Pricing</strong>
                   </h1>
@@ -85,13 +62,13 @@
           </a>
           <a href="/docs" class="link-block-menu w-inline-block">
               <div id="docs-group" class="menu-select-group">
-                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa941e8c086acac80131_document.svg" loading="lazy" width="40" alt="" class="image-2">
+                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa941e8c086acac80131_document.svg" loading="lazy" alt="" class="image-2">
                 <h1 class="heading-4"><strong>Docs</strong></h1>
               </div>
           </a>
           <a href="/login" class="link-block-menu w-inline-block">
               <div id="login-group" class="menu-select-group">
-                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa90d9e96f82b3044257_user.svg" loading="lazy" width="40" alt="" class="image-2">
+                <img src="https://uploads-ssl.webflow.com/60dfa3f4fa638f28f6fea099/60dfaa90d9e96f82b3044257_user.svg" loading="lazy" alt="" class="image-2">
                   <h1 class="heading-4">
                     <strong>Login</strong>
                   </h1>
@@ -107,9 +84,8 @@
 
 <style>
 .div-block-6 {
-    position: fixed;
     display: flex;
-    width: 275px;
+    padding: 10px;
     min-height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -126,12 +102,9 @@
 }
 .menu-select-group {
     display: flex;
-    width: 225px;
     height: 50px;
     margin-bottom: 20px;
-    padding-top: 0;
-    padding-bottom: 8px;
-    padding-left: 10px;
+    padding: 15px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-direction: row;
@@ -165,8 +138,6 @@
 }
 .image-2 {
     height: 30px;
-    margin-top: 10px;
-    margin-right: 15px;
 }
 .container-5 {
     display: block;

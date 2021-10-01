@@ -1,6 +1,20 @@
 <script>
   import { goto, layout, redirect } from '@roxi/routify';
 
+  async function loginWithEmailPassword(email, password) {
+        const data = {
+            email: email,
+            password: password
+        }
+        const res = await fetch("http://127.0.0.1:3000/login", {
+            method: 'POST',
+            body: JSON.stringify(data) 
+          });
+          var json = res.json();
+          console.log(json)
+          return json
+    }
+
   const login = (email, password) => {
       loginWithEmailPassword(email, password)
       .catch((error) => {
