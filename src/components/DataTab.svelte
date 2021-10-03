@@ -4,19 +4,20 @@
   import TableMenu from './../components/TableMenu.svelte';
 </script>
 
-<main>
-  <div class="block">
-    <FormulaInput />
+<div class="block tab-div">
+  <FormulaInput />
+</div>
+<div class="columns">
+  <div class="column is-2">
+    <TableMenu />
   </div>
-  <div class="columns">
-    <div class="column is-2">
-      <TableMenu />
-    </div>
-    <div class="column">
-      <Sheet />
-    </div>
+  <div class="column">
+    <Sheet />
   </div>
-</main>
+</div>
 
 <style>
+  .tab-div {
+    width: 100%;
+  }
 </style>

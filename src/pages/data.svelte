@@ -38,6 +38,8 @@
   main {
     padding: 15px;
     min-width: 85%;
+    width: 100%;
+    min-height: 100vh;
   }
   a:hover {
     text-decoration: none;
