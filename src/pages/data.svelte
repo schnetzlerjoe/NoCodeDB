@@ -3,23 +3,29 @@
   import DataTab from './../components/DataTab.svelte';
   import TypesTab from './../components/TypesTab.svelte';
 
-  export let tab = "data";
+  export let tab = "types";
+
+  const changeTab = (newTab) => {
+    tab = newTab;
+    document.getElementsByClassName('is-active')[0].classList.remove('is-active');
+    document.getElementById(newTab + '-tab-button').classList.add('is-active');
+  }
 </script>
 
 <main>
-  <div class="tabs is-boxed is-medium">
+  <div class="tabs is-boxed is-normal">
     <ul>
-      <li>
+      <li class="is-active" on:click={() => changeTab("types")} id="types-tab-button">
         <a>
           <span>Types</span>
         </a>
       </li>
-      <li class="is-active">
+      <li on:click={() => changeTab("data")}  id="data-tab-button">
         <a>
           <span>Data</span>
         </a>
       </li>
-      <li>
+      <li on:click={() => changeTab("privacy")}  id="privacy-tab-button">
         <a>
           <span>Privacy</span>
         </a>
