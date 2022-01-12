@@ -9,6 +9,14 @@
     {
       "name": "Auth",
       "description": "API For User Authentication"
+    },
+    {
+      "name": "Row",
+      "description": "API For Row Functionality"
+    },
+    {
+      "name": "Col",
+      "description": "API For Column Functionality"
     }
   ],
   "schemes": [
@@ -120,6 +128,54 @@
           "200": {
             "description": "User logged out successfully."
           }
+        }
+      }
+    },
+    "/row": {
+      "post": {
+        "tags": [
+          "Row"
+        ],
+        "description": "Add a new row to a table.",
+        "responses": {
+          "200": {
+            "description": "Row was successfully added to the table."
+          }
+        }
+      }
+    },
+    "/col": {
+      "post": {
+        "tags": [
+          "Col"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "name",
+            "description": "Set the name of the Column to add...",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": true
+            }
+          },
+          {
+            "in": "body",
+            "name": "datatype",
+            "description": "Optionally, set the datatype of the Column to add...",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "required": false
+            }
+          }
+        ]
+      },
+      "description": "Add a new column to a table.",
+      "responses": {
+        "200": {
+          "description": "Column was successfully added to the table."
         }
       }
     }

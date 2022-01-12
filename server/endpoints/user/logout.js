@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require('uuid');
 const jwt = require("jsonwebtoken");
 const mongodb = require("./../../helpers/mongodb");

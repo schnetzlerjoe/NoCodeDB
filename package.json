@@ -1,8 +1,8 @@
 {
-    "name": "routify-starter",
+    "name": "NoCodeDB",
     "private": true,
     "scripts": {
-        "start": "concurrently \"run-p dev:*\" \"cd server && npx nodemon index.js\"",
+        "start": "concurrently \"npm run dev\" \"cd server && npm start\"",
         "dev": "run-p dev:*",
         "dev:routify": "routify",
         "dev:vite": "vite",
@@ -29,7 +29,6 @@
         "concurrently": "^6.2.2",
         "esbuild": "^0.12.22",
         "express": "^4.17.1",
-        "firebase": "^9.1.0",
         "fs-extra": "^10.0.0",
         "mathjs": "^9.4.4",
         "vercel": "^23.1.2",

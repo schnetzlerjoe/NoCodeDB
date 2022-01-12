@@ -1,9 +1,11 @@
 const { MongoClient } = require("mongodb");
+require('dotenv').config();
+
+if(!process.env.dbUrl) { throw new Error("dbUrl environment variable is not set ...") }
 
 async function createDatabase(dbName) {
   try {
-    const url =
-      process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+    const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
     MongoClient.connect(url, async function(err, db) {
       if (err) throw err;
@@ -19,8 +21,7 @@ async function createDatabase(dbName) {
 async function createCollection(dbName, collectionName) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         var dbo = await db.db(dbName);
@@ -39,8 +40,7 @@ async function createCollection(dbName, collectionName) {
 async function createDoc(dbName, collectionName, data) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -60,8 +60,7 @@ async function createDoc(dbName, collectionName, data) {
 async function createDocs(dbName, collectionName, data) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -81,8 +80,7 @@ async function createDocs(dbName, collectionName, data) {
 async function findDoc(dbName, collectionName, query = {}, projection = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -102,8 +100,7 @@ async function findDoc(dbName, collectionName, query = {}, projection = {}) {
 async function findDocs(dbName, collectionName, query = {}, projection = {}, sort = {}, limit = null) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       if(limit == null) {
         MongoClient.connect(url, async function(err, db) {
@@ -136,8 +133,7 @@ async function findDocs(dbName, collectionName, query = {}, projection = {}, sor
 async function deleteDoc(dbName, collectionName, query = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -158,8 +154,7 @@ async function deleteDoc(dbName, collectionName, query = {}) {
 async function deleteDocs(dbName, collectionName, query = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -180,8 +175,7 @@ async function deleteDocs(dbName, collectionName, query = {}) {
 async function deleteCollection(dbName, collectionName, query = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -202,8 +196,7 @@ async function deleteCollection(dbName, collectionName, query = {}) {
 async function updateDoc(dbName, collectionName, query = {}, data = {}, push = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;
@@ -225,8 +218,7 @@ async function updateDoc(dbName, collectionName, query = {}, data = {}, push = {
 async function updateDocs(dbName, collectionName, query = {}, data = {}) {
   return new Promise((resolve, reject) => {
     try {
-      const url =
-        process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
+      const url = process.env.dbUrl + dbName + "?retryWrites=true&w=majority";
 
       MongoClient.connect(url, async function(err, db) {
         if (err) throw err;

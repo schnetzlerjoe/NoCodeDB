@@ -108,12 +108,9 @@ app.get('/:table/:column', jwt_verify.authenticateToken, async (req, res, next) 
 
 app.post('/:table/column', jwt_verify.authenticateToken, async (req, res, next) => {
 
-
   try {
 
-    columnPost.post(req, res, next).then((data) => {
-      res.status(201).json({"message": "Column Successfully Added"})
-    })
+    columnPost.post(req, res, next)
   
   } catch (err) {
 
