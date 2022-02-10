@@ -11,12 +11,16 @@
       "description": "API For User Authentication"
     },
     {
-      "name": "Row",
-      "description": "API For Row Functionality"
+      "name": "Table",
+      "description": "API For Table Functionality"
     },
     {
       "name": "Col",
       "description": "API For Column Functionality"
+    },
+    {
+      "name": "Row",
+      "description": "API For Row Functionality"
     }
   ],
   "schemes": [
@@ -131,6 +135,19 @@
         }
       }
     },
+    "/table": {
+      "post": {
+        "tags": [
+          "Table"
+        ],
+        "description": "Add a new table.",
+        "responses": {
+          "200": {
+            "description": "Table was successfully added to the table."
+          }
+        }
+      }
+    },
     "/row": {
       "post": {
         "tags": [
@@ -144,12 +161,23 @@
         }
       }
     },
-    "/col": {
+    "/{table}/column": {
       "post": {
         "tags": [
           "Col"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "table",
+            "description": "The table to add this Column to...",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "required": true,
+              "example": "Names"
+            }
+          },
           {
             "in": "body",
             "name": "name",
@@ -157,7 +185,8 @@
             "required": true,
             "schema": {
               "type": "string",
-              "required": true
+              "required": true,
+              "example": "Name"
             }
           },
           {
@@ -167,7 +196,8 @@
             "required": false,
             "schema": {
               "type": "string",
-              "required": false
+              "required": false,
+              "example": "string"
             }
           }
         ]

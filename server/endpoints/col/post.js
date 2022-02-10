@@ -10,6 +10,7 @@ module.exports.post = async (req, res, next) => {
       const col_check = await mgdb.findDoc("metadata", "columns", {"columnName": req.body.name})
       if(col_check != null) { throw new Error("Column Already Exists") }
       // Run add column and update metadata
+      console.log(req.body)
       await mgdb.createDoc("metadata", "columns", { "table": req.params.table, "columnName": req.body.name, "datatype": req.body.datatype, "require_auth": true, "user_only_data": false, "required": true})
       ret = {
         "success": true,
@@ -22,10 +23,10 @@ module.exports.post = async (req, res, next) => {
       console.log(err)
       ret = {
         "success": false,
-        "successCode": 400,
+        "successCode": 500,
         "message": err.message
       }
-      res.status(400).json(ret)
+      res.status(500).json(ret)
       resolve(ret)
     }
   })
