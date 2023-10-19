@@ -1,3 +1,5 @@
+NO LONGER SUPPORTED - DEPRECATED
+
 # NoCodeDB
 
 NoCodeDB is an open-source, backend-as-a-service. Use your builder of choice: Webflow, Draftbit, heck use our API with custom code. You can spin up a database, add authentication with state management, and create a fully customizable backend API in minutes. All without writing a line of code. NoCodeDB is highly scalable and completely customizable, from MVP to Fortune 500.
